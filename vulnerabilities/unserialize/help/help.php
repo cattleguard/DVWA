@@ -7,14 +7,24 @@
 	<td><div id="code">
 		<h3>About</h3>
 		<p>
-			PHP Object Injection is a server-side vulnerability class in which an attacker is 
-			able to arbitrarily instantiate an object of a type (class) previously loaded by the application.  
-			This can result in code execution, file overwrite, etc.
+			Object Injection is a server-side vulnerability class in which an attacker is 
+			able to instantiate an object of their choosing.  
 		</p>
 		<p>
-			This occurs by way of using the unserialize() method to load an user controlled serialized object.
-			I know what you're thinking.  So I can create an object, how does that get me code execution?  Well,
-			PHP classes have a set of "magic methods".
+			PHP Object Injection can occur when an application makes use of the unserialize()
+			 method to load user controlled serialized objects.  This can have a variety of
+			 effects including PHP code execution.
+		</p>
+		<p>
+		<h4>Prerequisites</h4>
+			<ul>
+				<li>The attack class being leveraged must already exist within the codebase.</li>
+				<li>The class must contain one of the "magic methods".</li>
+			</ul>
+		</p>
+		<h3>Objective</h3>
+		<p>
+			Obtain code execution using the file_put_contents() method of the DangerZone class.
 		</p>
 	</div></td>
 	</tr>
